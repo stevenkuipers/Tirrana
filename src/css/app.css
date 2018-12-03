@@ -1,0 +1,42 @@
+
+/* Vendor override */
+
+/* #2D7787 */
+/* #C4AE78 */
+/* #FFF4FF */
+/* #E1E8DF */
+/* #B8D5CE */
+
+:root {
+  --blue: #2D7787;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #E1E8DF !important;
+  --gray-dark: #343a40;
+  --primary: #2D7787 !important;
+  --primary-hover: #4993A3 !important;
+  --secondary: #C4AE78 !important;
+  --success: #28a745;
+  --info: #4993A3 !important;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #FFF4FF !important;
+  --dark: #B8D5CE !important;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem ;
+  font-family: 'Comfortaa', cursive;
+}

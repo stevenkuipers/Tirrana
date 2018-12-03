@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="stylesheet" href="./css/vendor/bootstrap-vue.css">
+    <link rel="stylesheet" href="./css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./css/vendor/vue2-animate.css">
+    <link rel="stylesheet" href="./css/app.css">
     <meta charset="utf-8">
-    <title></title>
+    <title>Tirrana - Learning for the 21th century</title>
+
   </head>
   <body>
-    <div id="test"></div>
+    <div id="app"></div>
   </body>
 
   <script>
   import Vue from 'vue';
-  import Test from './test';
+  import App from './App';
+  import BootstrapVue from 'bootstrap-vue';
 
-  const app = new Vue(Test).$mount('#test');
+  Vue.use(BootstrapVue);
 
-  app.text = "Electron Forge with Vue.js!";
+  const app = new Vue(App).$mount('#app');
+
+  app.text = "Learning remade. It's the 21th century after all!";
 
   </script>
 </html>
