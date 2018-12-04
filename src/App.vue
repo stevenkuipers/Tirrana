@@ -1,7 +1,7 @@
 <template>
     <b-container fluid class="app__container" :style="{backgroundImage : bgImage}">
 
-      <div :class="colWidth"class="col-fix-w" >
+      <div :class="colWidth" class="col-fix-w" >
         <b-button block @click="toggleNav">{{ showNav ? 'Close' : 'Open' }} Menu</b-button>
         <!-- Custom transition / not with animate library -->
         <transition name="slide-to-the-left">
@@ -70,15 +70,12 @@ export default {
     padding-left: 0;
     padding-right: 0;
     display: flex;
+    align-items: stretch;
     min-height: 100vh;
     background-image: url(./images/background-image01.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-  }
-
-  .nav__menu, .nav__side__open{
-    height: 100%;
   }
 
 .nav__side__open {
@@ -90,29 +87,29 @@ export default {
   cursor: pointer;
 }
 
-  .col-fix-w {
-    background: rgba(250,250,250,0.3);
-    flex-grow: 0;
-    flex-shrink: 0;
-    max-width: 100%;
-    transition: all .5s .3s;
-  }
+.col-fix-w {
+  background: rgba(250,250,250,0.3);
+  flex-grow: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  transition: all .5s .3s;
+}
 
-  /* Add coll override to fix width of navigation on left side */
-  .col-fix-w-wide {
-    flex-basis: 18rem;
-  }
-  /* Add coll override to fix width of navigation on left side */
-  .col-fix-w-small {
-    flex-basis: 2rem;
-  }
+/* Add coll override to fix width of navigation on left side */
+.col-fix-w-wide {
+  flex-basis: 18rem;
+}
+/* Add coll override to fix width of navigation on left side */
+.col-fix-w-small {
+  flex-basis: 2rem;
+}
 
-  .main__content {
-    justify-content: stretch;
-  }
+.main__content {
+  justify-content: stretch;
+}
 
-  .flex-grow {
-    flex: 1 0 auto;
+.flex-grow {
+  flex: 1 0 auto;
 }
 
 /* Enter and leave animations can use different */

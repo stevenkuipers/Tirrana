@@ -1,21 +1,33 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
+const path = require('path');
+const Store = require('./store.js');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
-const isDevMode = process.execPath.match(/[\\/]electron/);
 
+// Debug Mode enabled for development
+const isDevMode = process.execPath.match(/[\\/]electron/);
 if (isDevMode) enableLiveReload();
+
+
+// Instantiate the store
+const store = new Store({
+  // Our data file is called 'user-preferences'
+  configName: 'user-preferences',
+  defaults: {
+    // 800x600 is the default size of our window
+    windowBounds: { width: 800, height: 600 }
+  }
+});
+let { width, height } = store.get('windowBounds');
 
 const createWindow = async () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-  });
+  mainWindow = new BrowserWindow({ width, height });
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
@@ -33,6 +45,14 @@ const createWindow = async () => {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+
+  mainWindow.on('resize', () => {
+     // The event doesn't pass us the window size, so we call the `getBounds` method which returns an object with
+     // the height, width, and x and y coordinates.
+     let { width, height } = mainWindow.getBounds();
+     // Now that we have them, save them using the `set` method.
+     store.set('windowBounds', { width, height });
+   });
 };
 
 // This method will be called when Electron has finished
