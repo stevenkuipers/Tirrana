@@ -35,6 +35,7 @@ export default {
     },
   data () {
     return {
+      user : {},
       showNav: true,
       hideTutorial : false,
       showStudyTimer : false,
@@ -43,6 +44,23 @@ export default {
       content : 'main',
       backgroundImages : ['background-image01.jpg', 'background-image02.jpg','background-image03.jpg'],
     }
+  },
+  created : function(){
+
+    // On first initialization of app:
+    if(!store.get('settings')){
+      store.set('settings', { hideTutorial: false })
+    }
+
+    if(!store.get('name')){
+      store.set('user', { name: '' })
+    }
+
+
+    //Get all stored data from localstorage and set data with it 
+    this.hideTutorial = store.get('settings').hideTutorial;
+    this.user = store.get('user').name;
+
   },
   computed : {
     colWidth : function(){
@@ -55,6 +73,7 @@ export default {
   methods : {
     toggleTutorial : function(val){
       this.hideTutorial = val;
+      store.set('settings', { hideTutorial: true})
     },
     toggleNav : function(event){
       this.showNav = !this.showNav;

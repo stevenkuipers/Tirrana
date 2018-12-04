@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/app.css">
     <meta charset="utf-8">
     <title>Tirrana - Learning for the 21th century</title>
-
   </head>
   <body>
     <div id="app"></div>
@@ -20,9 +19,9 @@
   import BootstrapVue from 'bootstrap-vue';
 
   Vue.use(BootstrapVue);
-
+  var store = require('store');
+  
   const app = new Vue(App).$mount('#app');
-
   app.text = "Learning remade. It's the 21th century after all!";
 
   </script>
