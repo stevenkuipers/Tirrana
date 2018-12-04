@@ -1,13 +1,12 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow } from 'electron';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
 const path = require('path');
-const Store = require('./store.js');
+const Store = require('./mainProcessStore.js');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
-
 
 // Debug Mode enabled for development
 const isDevMode = process.execPath.match(/[\\/]electron/);

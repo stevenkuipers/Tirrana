@@ -29,6 +29,9 @@ export default {
           this.width = this.$el.parentNode.clientWidth;
       }.bind(this), 50));
   },
+  beforeDestroy : {
+    // delete event listener
+  },
   computed : {
     Computedwidth : function(){
       return this.width;
