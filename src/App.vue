@@ -20,15 +20,12 @@
         v-on:toggleTutorial="toggleTutorial"
         ></app-main-content>
 
-
   </b-container>
 </template>
 
 <script>
-
 import AppmenU from './components/AppmenU';
 import AppmainContent from './components/AppmaincontenT';
-
 
 export default {
   name: 'app',
@@ -77,7 +74,6 @@ export default {
   }
 
   .nav__menu, .nav__side__open{
-
     height: 100%;
   }
 
@@ -101,7 +97,6 @@ export default {
   /* Add coll override to fix width of navigation on left side */
   .col-fix-w-wide {
     flex-basis: 18rem;
-
   }
   /* Add coll override to fix width of navigation on left side */
   .col-fix-w-small {

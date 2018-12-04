@@ -7,7 +7,6 @@
 <script>
 export default {
   name: 'AppstudyTimer',
-
   data : function(){
     return {
       width: '100',
@@ -40,7 +39,6 @@ export default {
 </script>
 
 <style lang="css">
-
 .timer {
   position: fixed;
   bottom: 0;
@@ -54,5 +52,4 @@ export default {
   border-top: 1px solid var(--light);
   transition: width .2s;
 }
-
 </style>

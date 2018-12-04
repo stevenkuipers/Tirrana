@@ -38,14 +38,13 @@
     </div>
   </transition>
 
-
   <transition name="fadeDown">
     <app-study-timer v-if="showStudyTimer"></app-study-timer>
   </transition >
 </main>
 </template>
-<script>
 
+<script>
 import AppstudyTimer from './AppstudyTimer';
 
 export default {
