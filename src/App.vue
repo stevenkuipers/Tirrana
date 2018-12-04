@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid class="app__container">
+    <b-container fluid class="app__container" :style="{backgroundImage : bgImage}">
 
       <div :class="colWidth"class="col-fix-w" >
         <b-button block @click="toggleNav">{{ showNav ? 'Close' : 'Open' }} Menu</b-button>
@@ -40,13 +40,17 @@ export default {
       showStudyTimer : false,
       colWidthWide: 'col-fix-w-wide',
       colWidthSmall: 'col-fix-w-small',
-      content : 'main'
+      content : 'main',
+      backgroundImages : ['background-image01.jpg', 'background-image02.jpg','background-image03.jpg'],
     }
   },
   computed : {
     colWidth : function(){
       return this.showNav ? this.colWidthWide : this.colWidthSmall
-    }
+    },
+    bgImage : function(){
+      return 'url(./images/' +this.backgroundImages[0] + ')'
+    },
   },
   methods : {
     toggleTutorial : function(val){

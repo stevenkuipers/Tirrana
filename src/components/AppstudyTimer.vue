@@ -27,7 +27,7 @@ export default {
       window.addEventListener('resize', this.debounce(function () {
         console.log('fire');
           this.width = this.$el.parentNode.clientWidth;
-      }.bind(this), 200));
+      }.bind(this), 50));
   },
   computed : {
     Computedwidth : function(){
