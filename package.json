@@ -52,7 +52,7 @@
     "electron-compile": "^6.4.3",
     "electron-devtools-installer": "^2.2.4",
     "electron-squirrel-startup": "^1.0.0",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "store": "^2.0.12",
     "vue": "^2.5.17",
     "vue-loader": "^15.4.2",
